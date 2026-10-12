@@ -224,7 +224,22 @@ $10^5$ pulls, the Jarzynski estimator gives $10.134\pm0.015$ for the slow pull a
 fast one ($\Delta F=10.125$), although the mean work exceeds $\Delta F$ by $1.7$ and $5.3\,\kT$. The
 convergence curves (Fig.~\ref{fig:F1}b) show the characteristic behaviour: with few pulls the estimate
 sits near $\avg W$, and it approaches $\Delta F$ only once rare low-work pulls have been sampled. That takes
-about $100$ times more pulls for the faster protocol.
+about $100$ times more pulls for the faster protocol (Table~\ref{tab:F1}).
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcccccc}
+\toprule
+$\tau$ ($\tau/\tau_1$) & exact $\Delta F$ & $\avg W$ sim / exact & $\sigma_W^2$ sim / exact & $\beta\Wd$ & $\dFJ$ & $M_{\rm eff}$\\
+\midrule
+$0.2$ ($0.8$) & $10.125$ & $15.420$ / $15.435$ & $10.64$ / $10.62$ & $5.30$ & $10.19\pm0.14$ & $51$\\
+$2$ ($7.7$) & $10.125$ & $11.816$ / $11.816$ & $3.41$ / $3.38$ & $1.69$ & $10.134\pm0.015$ & $4348$\\
+\bottomrule
+\end{tabular}
+\caption{Gaussian chain ($N=10$, $\kT=1$, $10^5$ pulls): simulated against exact work statistics of the
+discrete algorithm, and the Jarzynski estimate with its bootstrap error.}
+\label{tab:F1}
+\end{table}
 
 The lower panels show why. The weight $x=e^{-\beta(W-\Delta F)}$ has mean exactly one, but for Gaussian work
 the pulls and the contributions to the mean are displaced from each other by $\beta^2\sigma_W^2$ in $\ln x$.
@@ -249,7 +264,23 @@ affine estimate \eqref{eq:affine} gives $16.4$, $5.5$ and $0.55$: it is low by a
 the $1/\tau$ scaling holds down to $\tau=\tau_1$. The near-equilibrium relation $\sigma_W^2=2\kT\Wd$ holds
 to $3\%$ for the slowest pull but is exceeded by factors $1.2$ and $1.5$ for the faster ones, where the
 distribution also acquires a positive skew. As a result the second-cumulant estimate
-$\avg W-\beta\sigma_W^2/2$, exact for Gaussian work, fails by $10\,\kT$ at $\tau=\tau_1$.
+$\avg W-\beta\sigma_W^2/2$, exact for Gaussian work, fails by $10\,\kT$ at $\tau=\tau_1$ (Table~\ref{tab:F2}).
+
+\begin{table}[h]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccccccc}
+\toprule
+$\tau/\tau_1$ & exact $\Delta F$ & $\avg W$ & $\sigma_W$ & skew & $\beta\Wd$ & Eq.~\eqref{eq:affine} & $\dFJ$ & $\avg W-\tfrac{\beta}{2}\sigma_W^2$ & $M_{\rm eff}$\\
+\midrule
+$1$ & $4.420$ & $22.71$ & $7.52$ & $0.21$ & $18.3$ & $16.4$ & $4.99\pm0.48$ & $-5.54$ & $4.9$\\
+$3$ & $4.420$ & $10.58$ & $3.86$ & $0.16$ & $6.16$ & $5.48$ & $4.55\pm0.10$ & $3.12$ & $103$\\
+$30$ & $4.420$ & $5.03$ & $1.12$ & $0.05$ & $0.61$ & $0.55$ & $4.415\pm0.005$ & $4.404$ & $30784$\\
+\bottomrule
+\end{tabular}
+\caption{Entropic chain ($N=10$, $\kT=1$, $10^5$ pulls per speed): work statistics, dissipation against the
+affine estimate, Jarzynski and second-cumulant estimates, and effective sample size.}
+\label{tab:F2}
+\end{table}
 
 The Jarzynski estimator converges for $\tau=30\tau_1$ ($4.415\pm0.005$) and, with $10^5$ pulls, for $3\tau_1$
 ($4.55\pm0.10$), but not for $\tau=\tau_1$. Panels (c--e) make the reason visible, using the reverse pulls
@@ -284,7 +315,27 @@ Both $\Delta F$ and $\Wd$ are proportional to $T$ at fixed $\tau/\tau_1$, so tem
 unit. The residual drift comes from the slight thermal stretching of the bonds. At a fixed pulling
 \emph{time}, by contrast, the dissipated work is set by friction and speed and is nearly temperature
 independent, so $\beta\Wd\propto1/T$ ($18.4$, $9.3$, $4.6$, $2.2$). At $\kT=0.25$ it exceeds $\ln M$ and the
-estimate is $20\%$ too high. Experiments in a cold bath are harder only because the same pulling speed is relatively faster.
+estimate is $20\%$ too high. Experiments in a cold bath are harder only because the same pulling speed is
+relatively faster (Table~\ref{tab:F3}).
+
+\begin{table}[h]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l|cccc|cccc}
+\toprule
+& \multicolumn{4}{c|}{$\tau=4\tau_1(T)$} & \multicolumn{4}{c}{$\tau=21.9$ fixed}\\
+$\kT$ & exact $\Delta F$ & $\dFJ$ & $\beta\Wd$ & $M_{\rm eff}$ & $\dFJ$ & $\beta\Wd$ & $M_{\rm eff}$ & $\beta(\dFJ-\Delta F)$\\
+\midrule
+$0.25$ & $1.156$ & $1.155\pm0.014$ & $4.90$ & $307$ & $1.39\pm0.08$ & $18.4$ & $9$ & $+0.94$\\
+$0.5$ & $2.276$ & $2.214\pm0.055$ & $4.80$ & $81$ & $2.29\pm0.12$ & $9.27$ & $17$ & $+0.03$\\
+$1$ & $4.420$ & $4.425\pm0.055$ & $4.61$ & $331$ & $4.37\pm0.06$ & $4.61$ & $267$ & $-0.05$\\
+$2$ & $8.365$ & $8.683\pm0.082$ & $4.24$ & $648$ & $8.394\pm0.033$ & $2.25$ & $3336$ & $+0.01$\\
+\bottomrule
+\end{tabular}
+\caption{Temperature sweep of the entropic chain ($N=10$, $10^5$ pulls per point), at fixed reduced speed
+and at fixed pulling time. The Gaussian chain (not shown) has $\Delta F=10.125$ and $\avg W=11.815\pm0.002$ at every
+temperature.}
+\label{tab:F3}
+\end{table}
 
 \subsection{Chain length: an exponential cost}
 
@@ -305,7 +356,24 @@ $N=5$, $10$, $20$ and $40$, and approaches the affine estimate $\pi^2N/24$ (with
 $N=40$). The number of pulls needed therefore grows exponentially with chain length. The Jarzynski
 estimate is accurate to $0.03\,\kT$ up to $N=10$, biased by $+0.38\,\kT$ at $N=20$ and by $+1.47\,\kT$ at
 $N=40$, where $M_{\rm eff}=3.6$. At fixed computational budget the bias grows steeply with $N$
-(Fig.~\ref{fig:F4}c). Keeping $\beta\Wd$ fixed would require $\tau\propto N\tau_1\propto N^3$.
+(Fig.~\ref{fig:F4}c). Keeping $\beta\Wd$ fixed would require $\tau\propto N\tau_1\propto N^3$
+(Table~\ref{tab:F4}).
+
+\begin{table}[h]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{rccccccccc}
+\toprule
+$N$ & $\tau_1$ & exact $\Delta F$ & $\avg W$ & $\sigma_W$ & $\beta\Wd$ & $\pi^2N/24$ & $\dFJ$ & $\beta(\dFJ-\Delta F)$ & $M_{\rm eff}$\\
+\midrule
+$5$ & $1.45$ & $1.985$ & $5.04$ & $2.64$ & $3.05$ & $2.06$ & $2.018\pm0.025$ & $+0.03$ & $1239$\\
+$10$ & $5.46$ & $4.420$ & $9.03$ & $3.28$ & $4.61$ & $4.11$ & $4.429\pm0.059$ & $+0.01$ & $252$\\
+$20$ & $21.3$ & $9.491$ & $17.78$ & $4.43$ & $8.29$ & $8.22$ & $9.87\pm0.11$ & $+0.38$ & $84$\\
+$40$ & $84.3$ & $19.694$ & $35.65$ & $6.17$ & $15.96$ & $16.45$ & $21.16\pm0.55$ & $+1.47$ & $3.6$\\
+\bottomrule
+\end{tabular}
+\caption{Chain-length sweep ($\kT=1$, $\tau=4\tau_1(N)$, $10^5$ pulls per point).}
+\label{tab:F4}
+\end{table}
 
 The lower row shows the mechanism. As $N$ grows, the pulls move to lower weights and the exact
 contributions to the mean move to higher ones. At $N=40$, $81\%$ of the true average lies beyond the
@@ -348,7 +416,30 @@ BAR, which only needs the two distributions to overlap near $\Delta F$, gives $1
 $19.694$. The overlap region contains only $0.4\%$ of the forward and $0.3\%$ of the reverse pulls, a few hundred each,
 which suffices. BAR is within $0.01\,\kT$ of the exact value for all chain lengths. In the
 most demanding single case ($N=10$, $\tau=\tau_1$) it is $0.08\,\kT$ low, compared with $+0.57$ and $-0.54\,\kT$ for
-the one-sided estimates.
+the one-sided estimates (Table~\ref{tab:F5}).
+
+\begin{table}[h]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccccc}
+\toprule
+$\tau/\tau_1$ & $\beta\Wd^F$ & $\beta\Wd^R$ & $\sigma_F$ & $\sigma_R$ & Crooks slope & $\dFJ$ fwd & $\dFJ$ rev & BAR\\
+\midrule
+$1$ & $18.3$ & $13.6$ & $7.52$ & $5.16$ & $0.985$ & $4.99$ & $3.88$ & $4.340\pm0.039$\\
+$3$ & $6.16$ & $5.21$ & $3.86$ & $3.04$ & $0.994$ & $4.55$ & $4.40$ & $4.414\pm0.007$\\
+$30$ & $0.61$ & $0.61$ & $1.12$ & $1.09$ & $0.983$ & $4.415$ & $4.417$ & $4.416\pm0.002$\\
+\midrule
+$N$ ($\tau=4\tau_1$) & $\beta\Wd^F$ & $\beta\Wd^R$ & exact $\Delta F$ & & & $\dFJ$ fwd & $\dFJ$ rev & BAR\\
+\midrule
+$5$ & $3.05$ & $2.76$ & $1.985$ & & & $2.018$ & $1.905$ & $1.979\pm0.007$\\
+$10$ & $4.61$ & $4.03$ & $4.420$ & & & $4.429$ & $4.355$ & $4.420\pm0.007$\\
+$20$ & $8.29$ & $7.10$ & $9.491$ & & & $9.873$ & $9.136$ & $9.497\pm0.013$\\
+$40$ & $15.96$ & $13.59$ & $19.694$ & & & $21.162$ & $18.936$ & $19.688\pm0.039$\\
+\bottomrule
+\end{tabular}
+\caption{Forward against reverse pulls ($\kT=1$, $10^5$ pulls each). Top: $N=10$ at three speeds (exact
+$\Delta F=4.420$). Bottom: chain-length sweep. BAR errors are the spread over $10$ disjoint sub-samples divided by $\sqrt{10}$.}
+\label{tab:F5}
+\end{table}
 
 %=====================================================================
 \section{Discussion}
@@ -381,11 +472,6 @@ should not change the qualitative picture, since the scaling argument relies onl
 and the extensivity of $\Wd$. The interpretation of the forward--reverse asymmetry in terms of
 finite extensibility was not tested directly. Varying the bond stiffness or the extension range would test it.
 
-Two natural extensions are protocol optimisation and feedback. Shaping $\lam(t)$, rather than only its
-duration, reduces dissipation; in linear response the optimal protocol moves at constant thermodynamic
-speed. No open-loop protocol can bring the mean work below $\Delta F$, but feedback protocols that react to
-the measured chain can, at an information cost bounded by the Sagawa--Ueda relation.
-
 \section{Conclusion}
 
 We studied the Jarzynski and Crooks relations for an anchored two-dimensional chain pulled through a
@@ -397,6 +483,22 @@ work distributions across temperatures at fixed reduced speed and the exponentia
 of the number of pulls the Jarzynski estimator requires. Plots of $e^{-\beta W}$ together with the Crooks identity
 reveal when the forward estimate is missing most of its average, and Bennett's two-sided estimator recovers
 the exact free energy where one-sided estimates fail by more than $\kT$.
+
+\paragraph{Outlook.} Several extensions follow naturally from this work.
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \emph{Optimal protocols.} Here only the duration of a linear pull was varied. Shaping $\lam(t)$ itself
+reduces dissipation. In linear response the optimal protocol moves at constant thermodynamic speed, and for
+linear (Gaussian) systems the exact optimum can be computed and used as a benchmark for learned
+(e.g.\ reinforcement-learning) controllers.
+\item \emph{Feedback control.} No open-loop protocol can bring the mean work below $\Delta F$. Protocols that
+measure the chain and react to it can, at an information cost bounded by the Sagawa--Ueda relation
+$\avg W\ge\Delta F-\kT\avg I$. How much of that bound is reachable with a trap as the only actuator, and how the
+gain grows with the amount of information measured, are open questions for this model.
+\item \emph{Free-energy profiles.} The same pulls give the whole profile $F(\lam(t))$ through the
+Hummer--Szabo construction, not only the end-point difference.
+\item \emph{More realistic chains.} Excluded volume, bending stiffness and hydrodynamic interactions, with
+$\Delta F$ from thermodynamic integration, would test how far the scaling picture carries over.
+\end{itemize}
 
 %=====================================================================
 \appendix

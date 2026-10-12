@@ -63,3 +63,21 @@ cd ../docs && latexmk -pdf paper.tex report.tex theory.tex
 ```
 The raw work samples (`data/runs/`, ~30 MB) are not in the repository; they are regenerated and cached
 by the scripts. On an RTX 2060 the full set of runs takes about an hour.
+
+## Possible extensions
+- **Optimal protocols:** shape the trap trajectory λ(t), not only its duration, to minimise the mean work.
+  In linear response the optimum moves at constant thermodynamic speed; for the Gaussian chain the exact
+  optimum is computable and can benchmark a reinforcement-learning controller.
+- **Feedback control:** protocols that measure the chain and react can bring the mean work *below* ΔF,
+  within the Sagawa–Ueda bound ⟨W⟩ ≥ ΔF − k_BT⟨I⟩.
+- **Free-energy profiles:** the full F(λ(t)) from the same pulls (Hummer–Szabo).
+- **More realistic chains:** excluded volume, bending stiffness, hydrodynamic interactions.
+
+## Next steps
+The first two extensions (optimal and feedback-controlled pulling, with an RL controller compared with
+exact theory) are developed in a follow-up repository. Link to come.
+
+## Credits
+The code in this repository was written by Claude (Anthropic's AI assistant), following my guidelines and the
+system design I specified. The results were tested against exact references (unit tests and the
+analytical checks described in the documents).
